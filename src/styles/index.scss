@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  @apply bg-[#151515];
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar {
+  @apply bg-[#383838]  w-2;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[#a44246];
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply duration-500 bg-[#a44246];
+}

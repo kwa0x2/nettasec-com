@@ -1,0 +1,48 @@
+{
+    "home": "Secure Solutions For Your Business.",
+    "slogan": "Secure solutions for your business.",
+
+    "homeButtonText":"Let's Talk",
+
+    "homeHeroTitle": "NETTASEC SOLUTIONS",
+    "homeHeroText": "Innovative Solution Advanced Security",
+
+    "homeServicesTitle1":"HOW CAN WE HELP",
+    "homeServicesTitle2":"Services",
+
+    "homeServices1Title":"Penetration Testing",
+    "homeServices1Text":"Penetration testing, or pen testing, is a proactive approach to identifying security vulnerabilities within a system or network. Through simulated attacks, it helps organizations assess their security posture and fortify defenses against potential cyber threats.",
+    "homeServices2Title":"Back-End Development",
+    "homeServices2Text":"Backend development involves creating and maintaining the server-side logic and database interactions of a web application. It focuses on the functionality that powers the frontend, ensuring smooth performance and secure data handling.",
+    "homeServices3Title":"Cybersecurity Solutions",
+    "homeServices3Text":"Cybersecurity Solutions are essential tools and practices aimed at safeguarding digital assets from malicious activities. They encompass a variety of technologies such as firewalls, encryption, and intrusion detection systems, ensuring robust protection against cyber threats.",
+    "homeServices4Title":"WAF Security Services",
+    "homeServices4Text":"WAF Security Services provide an essential layer of defense for web applications by filtering and monitoring HTTP traffic between a web application and the internet. By analyzing and blocking potentially harmful traffic, WAFs help prevent common web-based attacks such as SQL injection, cross-site scripting (XSS), and DDoS attacks, enhancing the overall security posture of online assets.",
+    "homeServices5Title":"Cloud Computing",
+    "homeServices5Text":"Cloud computing revolutionizes the way businesses manage their data and applications by providing on-demand access to computing resources over the internet. Offering scalability, flexibility, and cost-effectiveness, cloud computing enables organizations to innovate and compete in today's dynamic digital landscape.",
+    "homeServices6Title":"Cybersecurity Consulting",
+    "homeServices6Text":"Cybersecurity consulting entails comprehensive assessment, strategic planning, and implementation of measures to safeguard digital assets against evolving threats. Our tailored solutions empower organizations to mitigate risks, enhance resilience, and foster a proactive security posture in today's dynamic digital landscape.",
+
+
+    "homeAboutTitle1":"WHO WE ARE",
+    "homeAboutTitle2":"PROBLEM SOLVERS",
+    "homeAboutText1": "NettaSec provides solutions such as penetration testing, backend development, cloud computing, web application firewall implementation, and cybersecurity consulting. Focusing on innovation and customer satisfaction, we enable businesses to protect their digital assets and navigate the evolving threat landscape with confidence.",
+  
+    "homeSloganText":"Empower Your Business Against Digital Threats with NettaSec's Robust Cybersecurity Strategies and Vigilant Defense.",
+
+    "homeContactTitle1":"YOUR NEXT STEP",
+    "homeContactTitle2":"Are you ready?",
+    "homeContactTitle3":"Contact Us",
+    "homeContactText1": "We're here to assist you with all your cybersecurity and other needs. Feel free to reach out to us for any inquiries or assistance regarding our services. Your satisfaction is our priority.",
+    "homeContactEmail":"contact@nettasec.com",
+    "homeContactYourNameInput":"Your Name",
+    "homeContactEmailInput":"Email Address",
+    "homeContactPhoneInput":"Contact Phone",
+    "homeContactDescriptionInput":"Describe your project..",
+    "homeContactSubmitButton":"Submit Message",
+
+    "footerCopyrightText": "Copyright @2024 NettaSec Solutions Inc, All rights reserved",
+    "footerButtonText": "get in touch",
+    "footerMailText":"Email",
+    "footerMail":"info@nettasec.com"
+  }

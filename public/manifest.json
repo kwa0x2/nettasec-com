@@ -1,0 +1,42 @@
+{
+  "short_name": "NettaSec Solutions",
+  "name": "NettaSec Solutions",
+  "description": "NettaSec Solutions is a technology company based in Turkey and the United Kingdom, providing services in areas such as cybersecurity, cloud computing, penetration testing, WAF security services, and backend development. We offer innovative solutions in cybersecurity consulting, security services, and software development, ensuring secure and reliable digital environments for our clients. With a comprehensive approach to meeting businesses' security needs and protecting their digital assets, NettaSec Solutions has strong technical expertise and experience to guide clients safely through their digital transformation.",
+  "start_url": "/",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#383838",
+  "theme_color": "#a44246",
+  "icons": [
+    {
+      "src": "/icons/nettasec-icon.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    },
+    {
+      "src": "/icons/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icons/256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/icons/192x192.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    },
+    {
+      "src": "/icons/128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons/96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nettasec.com
+
+# Sitemaps
+Sitemap: https://nettasec.com/sitemap.xml
