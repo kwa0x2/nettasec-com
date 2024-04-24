@@ -67,14 +67,14 @@ export const Footer: FC = () => {
               href="mailto:contact@nettasec.com?subject=Let's%20Talk"
               className="text-[#a44246] text-xs  hover:underline transition-colors duration-300 ease-in-out"
             >
-              {parser.get("footerMail")}
+              {parser.get("email")}
             </a>
           </div>
           <div className="pt-4 flex">
-            <a target="_blank" href={"https://www.instagram.com/nettasec/"}>
+            <a target="_blank" href={parser.get("footerInstagramLink")}>
               <CiInstagram className="w-8 h-8 text-[#d1d1d1] transition-all duration-500 ease-in-out  hover:opacity-50" />
             </a>
-            <a target="_blank" href={"https://www.instagram.com/nettasec/"}>
+            <a target="_blank" href={parser.get("footerLinkedinLink")}>
               <CiLinkedin className="w-8 h-8 text-[#d1d1d1] transition-all duration-500 ease-in-out  hover:opacity-50" />
             </a>
           </div>

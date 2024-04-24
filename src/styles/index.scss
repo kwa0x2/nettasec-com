@@ -6,12 +6,67 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   @apply bg-[#151515];
 }
 
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+input:-webkit-autofill  {
+  -webkit-box-shadow: 0 0 0 30px rgb(21 21 21) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown{
+  background-color: #1f1e1e !important;
+  color: white !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item:hover{
+  background-color: #151515 !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item--focused{
+  background-color: #151515 !important;
+  color: white !important;
+}
+
+.react-international-phone-input {
+  @extend .react-international-phone-country-selector-button;
+  width: 100%;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  color: rgb(209 209 209) !important;
+}
+
+.react-international-phone-country-selector-button {
+  border-radius: 0 !important;
+  height: 3rem !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.deneme {
+  border-bottom-width: 1px !important;
+  border-top-width: 0 !important;
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+  border-color: rgb(92 92 92) !important;
+  transition-property: color, background-color, border-color,
+  text-decoration-color, fill, stroke !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+  animation-duration: 500ms !important;
+  transition-duration: 500ms !important;
+
+  &:hover {
+    border-color: rgb(209 209 209) !important;
+  }
+
+  &:focus-within {
+    border-color: rgb(164 66 70) !important;
+  }
 }
 
 ::-webkit-scrollbar {

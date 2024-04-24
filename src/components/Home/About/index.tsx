@@ -33,7 +33,7 @@ export default function HomeAbout() {
         <div>
           <p className="text-[#d1d1d1] pb-10">{parser.get("homeAboutText1")}</p>
           <Button
-            variant="outline"
+            variant="outline_red"
             className="font-semilight p-7 text-xl bg-transparent"
             scrollTo="contact"
           >

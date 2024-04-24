@@ -1,6 +1,7 @@
 {
     "home": "Secure Solutions For Your Business.",
     "slogan": "Secure solutions for your business.",
+    "email":"contact@nettasec.com",
 
     "homeButtonText":"Let's Talk",
 
@@ -34,7 +35,6 @@
     "homeContactTitle2":"Are you ready?",
     "homeContactTitle3":"Contact Us",
     "homeContactText1": "We're here to assist you with all your cybersecurity and other needs. Feel free to reach out to us for any inquiries or assistance regarding our services. Your satisfaction is our priority.",
-    "homeContactEmail":"contact@nettasec.com",
     "homeContactYourNameInput":"Your Name",
     "homeContactEmailInput":"Email Address",
     "homeContactPhoneInput":"Contact Phone",
@@ -44,5 +44,10 @@
     "footerCopyrightText": "Copyright @2024 NettaSec Solutions Inc, All rights reserved",
     "footerButtonText": "get in touch",
     "footerMailText":"Email",
-    "footerMail":"info@nettasec.com"
+    "footerInstagramLink":"https://www.instagram.com/nettasec/",
+    "footerLinkedinLink":"https://www.linkedin.com/company/nettasec-solutions",
+
+    "404Title":"404",
+    "404Text":"The page you are looking for doesn't exist",
+    "404ButtonText":"Back to home"
   }

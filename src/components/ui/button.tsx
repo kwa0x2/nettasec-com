@@ -15,9 +15,9 @@ const buttonVariants = cva(
         destructive:
           "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
         outline:
-          "border border-[#aaaa] transition duration-700 ease-in-out bg-white hover:border-[#a44246] hover:bg-[#a44246] hover:text-white dark:border-[#aaaa] dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         outline_red:
-          "border border-slate-200 bg-white hover:bg-[#a44246] hover:border-[#a44246] hover:text-white dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-[#a44246] dark:hover:text-slate-50",
+          "border border-[#aaaa] transition duration-700 ease-in-out bg-white hover:border-[#a44246] hover:bg-[#a44246] hover:text-white dark:border-[#aaaa] dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         secondary:
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost:
@@ -61,8 +61,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         } else {
           if (scrollTo === "hero") {
             router.push("/");
-          }else{
-            router.push("/#"+scrollTo);
+          } else {
+            router.push("/#" + scrollTo);
           }
         }
       }

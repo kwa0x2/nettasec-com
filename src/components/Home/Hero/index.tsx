@@ -71,7 +71,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ id }) => {
         </h1>
 
         <Button
-          variant="outline"
+          variant="outline_red"
           className="font-semilight p-7 text-xl  bg-transparent"
           scrollTo="contact"
         >

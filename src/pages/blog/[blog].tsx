@@ -1,16 +1,12 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { Layout } from "@/components/Layout";
-import { NextPage } from "next";
-import { useLocaleParser } from "@/libs/localeParser";
+import { GetServerSideProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Custom404 from "../404";
 
-const BlogPage: NextPage = () => {
-  const router = useRouter();
-  const { blog } = router.query;
-  const [blogData, setBlogData] = useState<any>(null);
+const BlogPage: NextPage<{ blogData: any }> = ({ blogData }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -25,21 +21,11 @@ const BlogPage: NextPage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const fetchBlogData = async () => {
-      if (blog) {
-        try {
-          const data = await import(`../../data/blogs/${blog}.json`);
-          setBlogData(data.default);
-        } catch (error) {
-          router.push("/404");
-          setBlogData(null);
-        }
-      }
-    };
-
-    fetchBlogData();
-  }, [blog]);
+  if (!blogData) {
+    return (
+      <Custom404/>
+    );
+  }
 
   const maxBrightness = 70;
   const brightness = Math.max(50, maxBrightness - scrollPosition);
@@ -160,7 +146,7 @@ const BlogPage: NextPage = () => {
                   <div className="flex flex-wrap gap-2">
                     {blogData.tags.map((tag: string, index: number) => (
                       <span
-                        className="text-[13px] flex text-[#fff] leading-6"
+                        className="text-[13px] flex text-[#fff] leading-6 hover:text-[#a44246] transition-all duration-700 ease-in-out cursor-default	"
                         key={index}
                       >
                         <div className="text-[#888] mr-[2px]">#</div>
@@ -176,6 +162,18 @@ const BlogPage: NextPage = () => {
       </section>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const blog = params?.blog as string;
+
+  try {
+    const data = await import(`../../data/blogs/${blog}.json`);
+    const blogData = data.default;
+    return { props: { blogData } };
+  } catch (error) {
+    return { props: { blogData: null } };
+  }
 };
 
 export default BlogPage;

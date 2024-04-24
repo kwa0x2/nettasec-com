@@ -65,7 +65,7 @@ export const Navbar: FC = () => {
 
       <div>
         <Button
-          variant="outline"
+          variant="outline_red"
           className="font-semilight p-5 text-l h-9  bg-transparent"
           scrollTo="contact"
         >
