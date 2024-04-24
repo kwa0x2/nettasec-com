@@ -82,7 +82,7 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
                 className="deneme mb-8"
                 defaultCountry="tr"
                 placeholder="Phone Number"
-                value={phoneNumber}
+                value={phone}
                 onChange={(phone) => setPhone(phone)
                 }
               />
