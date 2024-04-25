@@ -59,7 +59,7 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
         </div>
 
         <div className="mt-5 lg:mt-0 lg:ml-20 lg:w-[70%]">
-          <form onSubmit={(e) => onContactSubmit(e, toast)}>
+          <form >
             <div className="flex flex-col lg:flex-row mb-5">
               <Input
                 className="flex-grow w-full lg:mr-2 mb-5 lg:mb-0"
