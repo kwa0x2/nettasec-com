@@ -77,7 +77,7 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
               />
             </div>
             <div>
-              <PhoneInput
+              {/* <PhoneInput
               name="phone_number"
                 className="deneme mb-8"
                 defaultCountry="tr"
@@ -85,7 +85,7 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
                 value={phone}
                 onChange={(phone) => setPhone(phone)
                 }
-              />
+              /> */}
             </div>
             <div>
               <textarea
