@@ -2,24 +2,78 @@
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useLocaleParser } from "@/libs/localeParser";
-import { onContactSubmit } from "@/libs/utils/contact";
 import { useToast } from "@/components/ui/use-toast";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import axios from "axios"; 
 
 interface HomeContactProps {
   id: string;
 }
 
+const STORAGE_KEY = "forumSubmit";
+
+const getLastFormSubmissionTime = () => {
+  const storedTime = localStorage.getItem(STORAGE_KEY);
+  return storedTime ? parseInt(storedTime, 10) : 0;
+};
+
+const setLastFormSubmissionTime = (time: number) => {
+  localStorage.setItem(STORAGE_KEY, time.toString());
+};
+
 const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
   const parser = useLocaleParser();
   const { toast } = useToast();
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [phone, setPhone] = useState("");
+  const [description, setDescription] = useState("");
+
   
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  try {
+    const currentTime = new Date().getTime();
+    const lastFormSubmissionTime = getLastFormSubmissionTime();
+
+    if (currentTime - lastFormSubmissionTime >= 10 * 1000) {
+      const contact = {
+        full_name: fullName,
+        phone_number: phoneNumber,
+        email: email,
+        description: description,
+      };
+
+      await axios.post("https://api.nettasec.com/api/contact", contact);
+
+      setLastFormSubmissionTime(currentTime);
+
+      toast({
+        title: "Thank you for your message!",
+        description:
+          "Your message has been received, and our team will get back to you shortly.",
+      });
+    } else {
+     
+      toast({
+        variant: "destructive",
+        title: "Too Many Requests",
+        description:
+          "Sorry, you are sending too many requests in quick succession. Please slow down and try again later.",
+      });
+    }
+  } catch (error) {
+    toast({
+      variant: "destructive",
+      title: "Uh oh! Something went wrong.",
+      description: "There was a problem with your request.",
+    });
+  }
+};
 
   return (
     <div id={id} className="flex flex-col  bg-[#151515] lg:pb-40 pb-10">
@@ -59,33 +113,36 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
         </div>
 
         <div className="mt-5 lg:mt-0 lg:ml-20 lg:w-[70%]">
-          <form >
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-col lg:flex-row mb-5">
               <Input
                 className="flex-grow w-full lg:mr-2 mb-5 lg:mb-0"
                 type="text"
                 placeholder={parser.get("homeContactYourNameInput")}
                 name="full_name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 required
               />
               <Input
                 className="flex-grow w-full lg:ml-2 mb-5 lg:mb-0"
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder={parser.get("homeContactEmailInput")}
               />
             </div>
             <div>
-              {/* <PhoneInput
-              name="phone_number"
+              <PhoneInput
+                name="phone_number"
                 className="deneme mb-8"
                 defaultCountry="tr"
                 placeholder="Phone Number"
-                value={phone}
-                onChange={(phone) => setPhone(phone)
-                }
-              /> */}
+                value={phoneNumber}
+                onChange={(phone) => setPhoneNumber(phone)}
+              />
             </div>
             <div>
               <textarea
@@ -93,6 +150,8 @@ const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
                 placeholder={parser.get("homeContactDescriptionInput")}
                 required
                 name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
             <Button
