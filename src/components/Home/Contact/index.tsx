@@ -14,7 +14,16 @@ interface HomeContactProps {
   id: string;
 }
 
+const STORAGE_KEY = "forumSubmit";
 
+const getLastFormSubmissionTime = () => {
+  const storedTime = localStorage.getItem(STORAGE_KEY);
+  return storedTime ? parseInt(storedTime, 10) : 0;
+};
+
+const setLastFormSubmissionTime = (time: number) => {
+  localStorage.setItem(STORAGE_KEY, time.toString());
+};
 
 const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
   const parser = useLocaleParser();
@@ -29,16 +38,15 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   try {
     const currentTime = new Date().getTime();
+    const lastFormSubmissionTime = getLastFormSubmissionTime();
 
-    if (true) {
+    if (currentTime - lastFormSubmissionTime >= 10 * 1000) {
       const contact = {
         full_name: fullName,
         phone_number: phoneNumber,
         email: email,
         description: description,
       };
-
-      // await axios.post("https://api.nettasec.com/api/contact", contact);
 
       await fetch("https://api.nettasec.com/api/contact", {
         method: "POST",
@@ -48,6 +56,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         body: JSON.stringify(contact),
       });
 
+      setLastFormSubmissionTime(currentTime);
 
       toast({
         title: "Thank you for your message!",
@@ -64,11 +73,10 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       });
     }
   } catch (error) {
-    console.log(error)
     toast({
       variant: "destructive",
       title: "Uh oh! Something went wrong.",
-      description: "There was a problem with your request.",
+      description: "Theres was a problem with your request.",
     });
   }
 };
