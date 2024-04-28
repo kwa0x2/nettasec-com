@@ -56,7 +56,7 @@ const SEO = {
     "cybersecurity solutions",
     "pen test",
     "pentest",
-    "penetratıon testing",
+    "penetration testing",
     "waf security services",
     "firewall security services",
     "waf security",
