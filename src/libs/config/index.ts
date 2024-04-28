@@ -7,7 +7,7 @@ const SEO = {
   publishDomain: `https://${domain}`,
   themeColor: "#a44246",
   keywords: [
-    "NettaSec Solutıons",
+    "NettaSec Solutions",
     "Nettasec şirketi",
     "alper karakoyun",
     ".kwa",
