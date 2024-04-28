@@ -14,16 +14,7 @@ interface HomeContactProps {
   id: string;
 }
 
-const STORAGE_KEY = "forumSubmit";
 
-const getLastFormSubmissionTime = () => {
-  const storedTime = localStorage.getItem(STORAGE_KEY);
-  return storedTime ? parseInt(storedTime, 10) : 0;
-};
-
-const setLastFormSubmissionTime = (time: number) => {
-  localStorage.setItem(STORAGE_KEY, time.toString());
-};
 
 const HomeContact: React.FC<HomeContactProps> = ({ id }) => {
   const parser = useLocaleParser();
@@ -38,9 +29,8 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   try {
     const currentTime = new Date().getTime();
-    const lastFormSubmissionTime = getLastFormSubmissionTime();
 
-    if (currentTime - lastFormSubmissionTime >= 10 * 1000) {
+    if (true) {
       const contact = {
         full_name: fullName,
         phone_number: phoneNumber,
@@ -58,7 +48,6 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         body: JSON.stringify(contact),
       });
 
-      setLastFormSubmissionTime(currentTime);
 
       toast({
         title: "Thank you for your message!",
