@@ -15,7 +15,7 @@ const nextConfig = {
     return [
       {
         source: "/linkedin",
-        destination: "https://github.com/SlipBey",
+        destination: "https://www.linkedin.com/company/nettasec-solutions",
         permanent: true,
       },
       {
