@@ -14,6 +14,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/alper",
+        destination: "https://www.linkedin.com/in/alper-karakoyun-8b195921a/",
+        permanent: true
+      },
+      {
         source: "/linkedin",
         destination: "https://www.linkedin.com/company/nettasec-solutions",
         permanent: true,
